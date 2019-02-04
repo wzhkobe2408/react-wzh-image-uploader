@@ -65,6 +65,9 @@ export default class ImageUploader extends React.Component<Props> {
   componentDidMount() {
     this.axiosInstance = axios.create({
       baseURL: this.props.baseURL,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
       onUploadProgress: function(e) {
         var percentage = Math.round((e.loaded * 100) / e.total) || 0;
         if (percentage < 100) {
@@ -81,14 +84,14 @@ export default class ImageUploader extends React.Component<Props> {
   onFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     const formData = new FormData();
-    files.forEach((file: File) => {
-      formData.append(file.name + file.lastModified, file);
+    files.forEach((file: File, _: number) => {
+      formData.append(file.lastModified.toString(), file);
     });
     this.setState({
       images: files.map(file => {
         return {
           url: window.URL.createObjectURL(file),
-          fileName: file.name + file.lastModified,
+          fileName: file.lastModified.toString(),
         };
       }),
       formData: formData,
@@ -105,11 +108,7 @@ export default class ImageUploader extends React.Component<Props> {
     const path = multi ? '/image-upload' : '/image-upload-single';
     // Sending Images
     this.axiosInstance
-      .post(path, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      })
+      .post(path, formData)
       .then(res => {
         this.setState({
           loading: false,

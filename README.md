@@ -28,6 +28,24 @@ export default class App extends Component {
 }
 ```
 
+## Example
+
+### preview
+
+![](preview.png)
+
+### uploading
+
+![](uploading.png)
+
+### finished
+
+![](finished.png)
+
+### cloudinary
+
+![](cloudinary.png)
+
 ## License
 
 MIT © [wzhkobe2408](https://github.com/wzhkobe2408)

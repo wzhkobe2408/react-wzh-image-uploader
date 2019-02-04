@@ -6,7 +6,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <ImageUploader multi={false} baseURL={'http://localhost:8080'} />
+        <ImageUploader multi={true} baseURL={'http://localhost:8080'} />
       </div>
     );
   }
