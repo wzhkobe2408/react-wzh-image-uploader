@@ -1,4 +1,4 @@
-# react-image-uploader
+# react-wzh-image-uploader
 
 > A React Component for upload image(single or multiple)
 
