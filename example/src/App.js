@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import ExampleComponent from 'react-image-uploader'
+import ImageUploader from 'react-image-uploader';
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <ImageUploader multi={false} baseURL={'http://localhost:8080'} />
       </div>
-    )
+    );
   }
 }

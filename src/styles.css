@@ -1,8 +1,65 @@
 /* add css styles here (optional) */
 
-.test {
+.label {
+  display: block;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.imagesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 0 100px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.imageBox {
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.deleteIcon {
+  position: absolute;
+  cursor: pointer;
+  transform: scale(0.6, 0.6);
+  top: 0;
+  left: 0;
+}
+
+.showImage {
+  border-radius: 10px;
+  width: 400px;
+}
+
+.uploadBtn {
   display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+  background-color: rgb(111, 178, 255);
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.uploadBtn:hover {
+  background-color: rgb(52, 147, 255);
+}
+
+.errInfo {
+  color: #db6161;
 }
