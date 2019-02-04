@@ -13,15 +13,17 @@ npm install --save react-image-uploader
 ## Usage
 
 ```tsx
-import * as React from 'react'
+import React, { Component } from 'react';
 
-import MyComponent from 'react-image-uploader'
+import ImageUploader from 'react-image-uploader';
 
-class Example extends React.Component {
-  render () {
+export default class App extends Component {
+  render() {
     return (
-      <MyComponent />
-    )
+      <div>
+        <ImageUploader multi={false} baseURL={'http://localhost:8080'} />
+      </div>
+    );
   }
 }
 ```
